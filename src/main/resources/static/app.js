@@ -1,8 +1,8 @@
-var user;
+var user = '';
 function connect(){
 	var socket = new SockJS('/chat');
     stompClient = Stomp.over(socket);  
-   	 user = 'User'+(String)(Math.floor((Math.random() * 10) + 1));
+   	 //user = 'User'+(String)(Math.floor((Math.random() * 10) + 1));
     
     stompClient.connect({}, //No header 
     	function(frame) { // CallBack: - Called on successful connection	
@@ -47,4 +47,15 @@ function setText(data1){
 function setConnected(connected){
 	 document.getElementById('connect').disabled = connected;
      document.getElementById('disconnect').disabled = !connected;
+}
+
+function login(){
+	
+	user = document.getElementById('name').value;
+	if(user==''){
+		return;
+	}
+	document.getElementById("loginScreen").style.display = "none";
+	document.getElementById("mainScreen").style.display = "block";
+	
 }
