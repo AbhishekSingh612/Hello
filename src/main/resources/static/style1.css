@@ -1,0 +1,93 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	overflow-y: hidden;
+}
+
+.bkgd {
+	background-color: #2c2f33;
+	height: 100vh;
+}
+
+.nameInput {
+	border: none;
+}
+
+.vertical-center {
+	position: absolute;
+	top: 30vh;
+}
+
+.welcomeText {
+	color: floralwhite;
+	text-align: center;
+	animation: fadeIn 3s;
+	visibility: visible;
+}
+
+.loginScreen {
+	padding-top: 30vh;
+}
+
+@keyframes fadeIn { 
+	0% {
+	opacity: 0;
+	}
+	100%{
+		visibility: visible;
+		opacity:1;
+	}
+}
+
+.chatWindow {
+	overflow: auto;
+	height: 90vh;
+	padding: 5%;
+}
+
+.sendMessageArea {
+	background-color: #2c2f33;
+	min-width: 100%;
+	position: fixed;
+	bottom: 0;
+	min-height: 5vh;
+}
+
+.InputBkgd {
+	color: #99aab5;
+	background-color: #23272a;
+	border-radius: 17px;
+	border: none;
+}
+
+.InputBkgd:focus {
+	color: #99aab5;
+	background-color: #23272a;
+	border-radius: 17px;
+	border: none;
+}
+
+.chatMessage {
+	margin: 1vh 0;
+	padding: 1vh 0;
+}
+
+.chatWindow>.chatMessage+.chatMessage {
+	border-top: 1px solid #99aab51e;
+}
+
+.senderName {
+	color: azure;
+	font-weight: 600;
+}
+
+.messageContent {
+	color: #99aab5;
+}
+
+.userImage {
+	background-color: aliceblue;
+	border-radius: 50px;
+	height: 2vw;
+	width: 2vw;
+}
