@@ -66,7 +66,10 @@ html, body {
 	border-radius: 17px;
 	border: none;
 }
-
+.HeadingText{
+	color: #99aab5;
+	font-size: 1.2rem;
+}
 .nameInput {
 	color: #99aab5;
 	background-color: #23272a;

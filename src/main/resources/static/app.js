@@ -1,4 +1,7 @@
 var user = '';
+const audio = new Audio("/new.wav");
+const caudio = new Audio("/connect.wav");
+isConnected = false;
 function connect(){
 	var socket = new SockJS('/chat');
     stompClient = Stomp.over(socket);  
@@ -18,6 +21,8 @@ function connect(){
 				console.log(messageOutput);
             	showMessageOutput(JSON.parse(messageOutput.body));
             });
+            caudio.play();
+            toggleConnect();
        });
 }
 
@@ -41,6 +46,10 @@ function setText(data1){
 	template.innerHTML = html;
 	var chatwindow = document.getElementById("chatWindow")
 	chatwindow.appendChild(template.content);
+  	chatwindow.scrollTop = chatwindow.scrollHeight;
+
+  	console.log(audio);
+  	audio.play();
 
 }
 
@@ -57,5 +66,24 @@ function login(){
 	}
 	document.getElementById("loginScreen").style.display = "none";
 	document.getElementById("mainScreen").style.display = "block";
+	toggleConnect();
+}
+
+function toggleConnect(){
 	
+	if(isConnected){
+		document.getElementById("connect").style.display = "none";
+		document.getElementById("disconnect").style.display = "block";
+	}
+	else{
+		document.getElementById("disconnect").style.display = "none";
+		document.getElementById("connect").style.display = "block";	
+	}
+
+	isConnected = !isConnected;
+}
+
+function disconnect(){
+	stompClient.disconnect();
+	toggleConnect();
 }
