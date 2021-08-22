@@ -11,7 +11,7 @@ function connect(){
     	function(frame) { // CallBack: - Called on successful connection	
     		
     		//for the disconnect button
-        	setConnected(true);
+       
         	
             console.log('StartLog Connected: ' + frame + 'end Log');
             
@@ -51,11 +51,6 @@ function setText(data1){
   	console.log(audio);
   	audio.play();
 
-}
-
-function setConnected(connected){
-	 document.getElementById('connect').disabled = connected;
-     document.getElementById('disconnect').disabled = !connected;
 }
 
 function login(){
