@@ -1,6 +1,8 @@
+var user;
 function connect(){
 	var socket = new SockJS('/chat');
     stompClient = Stomp.over(socket);  
+   	 user = 'User'+(String)(Math.floor((Math.random() * 10) + 1));
     
     stompClient.connect({}, //No header 
     	function(frame) { // CallBack: - Called on successful connection	
@@ -28,7 +30,7 @@ function showMessageOutput(data){
 
 function sendMessage(){
 	var message = document.getElementById('message').value;
-	var user = 'User'+(String)(Math.floor((Math.random() * 10) + 1));
+	var user1 = user;
 	stompClient.send("/app/hello", {}, 
                   JSON.stringify({'username':user, 'message':message}));
 }
