@@ -53,19 +53,31 @@ html, body {
 	min-height: 5vh;
 }
 
-.InputBkgd {
+.InputBkgd{
 	color: #99aab5;
 	background-color: #23272a;
 	border-radius: 17px;
 	border: none;
 }
 
-.InputBkgd:focus {
+.InputBkgd:focus,.InputBkgd:active {
 	color: #99aab5;
 	background-color: #23272a;
 	border-radius: 17px;
 	border: none;
 }
+
+.nameInput {
+	color: #99aab5;
+	background-color: #23272a;
+}
+
+.nameInput:focus,.nameInput:active{
+	color: #99aab5;
+	background-color: #23272a;
+
+}
+
 
 .chatMessage {
 	margin: 1vh 0;
