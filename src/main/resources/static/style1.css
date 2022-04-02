@@ -102,11 +102,33 @@ html, body {
 
 .userImage {
 	background-color: aliceblue;
+	background-image: url('/user1-lg.png');
 	border-radius: 50px;
-	height: 2vw;
-	width: 2vw;
+	height: 5vw;
+	width: 5vw;
+	background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-blend-mode: difference;
 }
 
 .mainScreen{
 	display:none;
+}
+
+.roomScreen{
+	padding-top: 30vh;
+	display:none;
+}
+
+@media (min-width: 768px){
+	.userImage {
+    		height: 3.5vw;
+			width: 3.5vw;
+    }
+}
+
+
+.space{
+	margin-top:2vh;
 }

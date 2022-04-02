@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Hello</title>
+<title>Hello WebSocket</title>
 <!-- <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <script src="/webjars/jquery/jquery.min.js"></script> -->
 <meta charset="utf-8">
@@ -26,42 +26,13 @@
 		<br>
 		<div class="jumbotron">
 			<div class="container">
-				<div class="row vw-80 g-1 justify-content-center ">
+				<div class="row vw-100 g-1 justify-content-center">
 					<div class="col-5">
 						<input type="text" placeholder="Enter Name"
 							class="nameInput form-control" id="name">
 					</div>
-
-				</div>
-
-				<div class="row vw-80 g-1 justify-content-center space">
-
-					<div class="col-5 text-center">
+					<div class="col-2 align-self-center">
 						<button class="btn btn-sm btn-dark" onclick="login()">Enter</button>
-					</div>
-
-				</div>
-
-
-			</div>
-		</div>
-	</div>
-
-
-	<div class="roomScreen" id="roomScreen">
-		<div class="welcomeText display-1">Join Room,</div>
-		<br>
-		<div class="jumbotron">
-			<div class="container">
-				<div class="row vw-80 g-1 justify-content-center">
-					<div class="col-5">
-						<input type="text" placeholder="Enter Name"
-							class="nameInput form-control" id="room">
-					</div>
-				</div>
-				<div class="row vw-80 g-1 justify-content-center space">
-					<div class="col-2 text-center">
-						<button class="btn btn-sm btn-dark" onclick="joinRoom()">Join</button>
 					</div>
 				</div>
 
@@ -72,11 +43,18 @@
 	<div id="mainScreen" class="mainScreen container p-0">
 		<div class="topBar">
 			<div class="container p-0">
-				<div class="row g-0 justify-content-center">
+				<div class="row g-0 justify-content-end">
 					<div class="col-9">
-						<div class="text-center HeadingText" id="roomNameHead">Chat</div>
+						<div class="text-center HeadingText">Chat</div>
 					</div>
 
+					<div class="col-3 p-0">
+
+						<button onclick="connect()" id="connect"
+							class="btn btn-sm btn-block btn-primary">Connect</button>
+						<button onclick="disconnect()" id="disconnect"
+							class="btn btn-sm btn-block btn-danger">Leave</button>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -105,28 +83,7 @@
 
 
 
-	<script type="text/javascript">
-		var nameEnter = document.getElementById("name");
-		nameEnter.addEventListener("keydown", function(e) {
-			if (e.key === "Enter") {
-				login();
-			}
-		});
 
-		var joinRoomEnter = document.getElementById("room");
-		joinRoomEnter.addEventListener("keydown", function(e) {
-			if (e.key === "Enter") {
-				joinRoom();
-			}
-		});
-
-		var sendMessageEnter = document.getElementById("message");
-		sendMessageEnter.addEventListener("keydown", function(e) {
-			if (e.key === "Enter") {
-				sendMessage();
-			}
-		});
-	</script>
 
 
 	<!--
@@ -144,8 +101,3 @@
 	</div> -->
 </body>
 </html>
-
-
-
-
-

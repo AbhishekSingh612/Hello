@@ -10,4 +10,6 @@ import lombok.NoArgsConstructor;
 public class MyMessage {
 	String username;
 	String message;
+	boolean joinMessage;
+	String userId;
 }
